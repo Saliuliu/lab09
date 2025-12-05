@@ -13,7 +13,7 @@ public class Controller {
 
     public Controller(){
         setFile(System.getProperty("user.home")
-                + System.getProperty(File.separator)
+                + File.separator
                 + "output.txt"
             );
     }
