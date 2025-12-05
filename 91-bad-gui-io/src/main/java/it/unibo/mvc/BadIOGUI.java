@@ -42,9 +42,14 @@ public class BadIOGUI {
     public BadIOGUI() {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
+
+        final JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+
         final JButton write = new JButton("Write on file");
-        canvas.add(write, BorderLayout.CENTER);
-        frame.setContentPane(canvas);
+        canvas.add(panel, BorderLayout.CENTER);
+        panel.add(write);
+        frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
          * Handlers
@@ -90,6 +95,10 @@ public class BadIOGUI {
          * on screen. Results may vary, but it is generally the best choice.
          */
         frame.setLocationByPlatform(true);
+        /*
+         * resize the frame to the minimum size
+         */
+        frame.pack();
         /*
          * OK, ready to push the frame onscreen
          */
