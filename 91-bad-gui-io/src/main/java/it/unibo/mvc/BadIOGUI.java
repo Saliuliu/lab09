@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.List;
@@ -82,7 +83,15 @@ public class BadIOGUI {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Prova di scrittura su terminale");
+                try (FileReader reader = new FileReader(PATH, StandardCharsets.UTF_8)) {
+                    char[] buffer = new char[1024];
+                        while (reader.read(buffer) != -1) {
+                            System.out.println(buffer);
+                        }
+                } catch (final IOException ex) {
+                    JOptionPane.showMessageDialog(frame, e, "Error", JOptionPane.ERROR_MESSAGE);
+                    ex.printStackTrace(); // NOPMD: allowed as this is just an exercise
+                }
             }
             
         });
