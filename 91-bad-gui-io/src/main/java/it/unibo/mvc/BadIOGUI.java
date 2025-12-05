@@ -47,8 +47,11 @@ public class BadIOGUI {
         panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
         final JButton write = new JButton("Write on file");
+        final JButton read = new JButton("Read from file");
+
         canvas.add(panel, BorderLayout.CENTER);
         panel.add(write);
+        panel.add(read);
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
@@ -74,6 +77,15 @@ public class BadIOGUI {
                 }
             }
         );
+
+        read.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Prova di scrittura su terminale");
+            }
+            
+        });
     }
 
     private void display() {
