@@ -27,5 +27,5 @@ public interface Controller {
     * Print the current string to the standard output
     * @throws IllegalStateException if the current string is unset
     */
-    public String printCurrentString();
+    public void printCurrentString();
 }
