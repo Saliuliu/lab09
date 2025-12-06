@@ -1,8 +1,6 @@
 package it.unibo.mvc;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -20,7 +18,6 @@ public final class SimpleGUI {
 
     private Controller controller = new Controller();
     private final JFrame frame = new JFrame();
-    private static final int PROPORTION = 5;
 
     public SimpleGUI() {
 
